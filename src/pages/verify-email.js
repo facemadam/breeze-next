@@ -15,14 +15,7 @@ const VerifyEmail = () => {
 
     return (
         <GuestLayout>
-            <AuthCard
-                logo={
-                    <Link href="/">
-                        <a>
-                            <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
-                        </a>
-                    </Link>
-                }>
+            <AuthCard>
 
                 <div className="mb-4 text-sm text-gray-600">
                     Thanks for signing up! Before getting started, could you

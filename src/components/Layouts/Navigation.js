@@ -17,10 +17,12 @@ const Navigation = ({ user }) => {
 
     return (
         <nav className="bg-white border-b border-gray-100">
+
             {/* Primary Navigation Menu */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     <div className="flex">
+                        
                         {/* Logo */}
                         <div className="flex-shrink-0 flex items-center">
                             <Link href="/dashboard">
@@ -66,7 +68,7 @@ const Navigation = ({ user }) => {
 
                             {/* Authentication */}
                             <DropdownButton onClick={logout}>
-                                Logout
+                                로그아웃
                             </DropdownButton>
                         </Dropdown>
                     </div>

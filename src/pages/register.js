@@ -29,20 +29,12 @@ const Register = () => {
 
     return (
         <GuestLayout>
-            <AuthCard
-                logo={
-                    <Link href="/">
-                        <a>
-                            <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
-                        </a>
-                    </Link>
-                }>
-                {/* Validation Errors */}
-                <AuthValidationErrors className="mb-4" errors={errors} />
+            <AuthCard>
 
                 <form onSubmit={submitForm}>
+
                     {/* Name */}
-                    <div>
+                    <div className="mb-4">
                         <Label htmlFor="name">Name</Label>
 
                         <Input
@@ -57,7 +49,7 @@ const Register = () => {
                     </div>
 
                     {/* Email Address */}
-                    <div className="mt-4">
+                    <div className="mb-4">
                         <Label htmlFor="email">Email</Label>
 
                         <Input
@@ -71,7 +63,7 @@ const Register = () => {
                     </div>
 
                     {/* Password */}
-                    <div className="mt-4">
+                    <div className="mb-4">
                         <Label htmlFor="password">Password</Label>
 
                         <Input
@@ -86,7 +78,7 @@ const Register = () => {
                     </div>
 
                     {/* Confirm Password */}
-                    <div className="mt-4">
+                    <div className="mb-6">
                         <Label htmlFor="passwordConfirmation">
                             Confirm Password
                         </Label>
@@ -96,22 +88,28 @@ const Register = () => {
                             type="password"
                             value={passwordConfirmation}
                             className="block mt-1 w-full"
-                            onChange={event =>
-                                setPasswordConfirmation(event.target.value)
-                            }
+                            onChange={event => setPasswordConfirmation(event.target.value)}
                             required
                         />
                     </div>
 
-                    <div className="flex items-center justify-end mt-4">
+                    {/* Validation Errors */}
+                    <AuthValidationErrors className="mb-4" errors={errors} />
+
+                    {/* Register */}
+                    <div className="block mb-4">
+                        <Button className="w-full text-white font-semibold bg-gray-800 hover:bg-gray-900 rounded-md">계정 등록</Button>
+                    </div>
+
+                    {/* Forgot / Register */}
+                    <div className="flex justify-between mb-4">
                         <Link href="/login">
-                            <a className="underline text-sm text-gray-600 hover:text-gray-900">
-                                Already registered?
+                            <a className="underline text-xs text-gray-500 hover:text-gray-900">
+                                로그인 페이지로 가기
                             </a>
                         </Link>
-
-                        <Button className="ml-4">Register</Button>
                     </div>
+
                 </form>
             </AuthCard>
         </GuestLayout>

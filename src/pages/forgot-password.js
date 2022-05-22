@@ -25,19 +25,10 @@ const ForgotPassword = () => {
 
     return (
         <GuestLayout>
-            <AuthCard
-                logo={
-                    <Link href="/">
-                        <a>
-                            <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
-                        </a>
-                    </Link>
-                }>
+            <AuthCard>
 
-                <div className="mb-4 text-sm text-gray-600">
-                    Forgot your password? No problem. Just let us know your
-                    email address and we will email you a password reset link
-                    that will allow you to choose a new one.
+                <div className="mb-4 text-lg text-gray-600">
+                    입력하신 이메일로 비밀번호 재설정 링크를 보내드립니다.
                 </div>
 
                 {/* Session Status */}
@@ -47,8 +38,9 @@ const ForgotPassword = () => {
                 <AuthValidationErrors className="mb-4" errors={errors} />
 
                 <form onSubmit={submitForm}>
+
                     {/* Email Address */}
-                    <div>
+                    <div className="block mb-4">
                         <Label htmlFor="email">Email</Label>
                         <Input
                             id="email"
@@ -62,8 +54,17 @@ const ForgotPassword = () => {
                         />
                     </div>
 
-                    <div className="flex items-center justify-end mt-4">
-                        <Button>Email Password Reset Link</Button>
+                    <div className="block mb-4">
+                        <Button className="w-full text-white font-semibold bg-gray-800 hover:bg-gray-900 rounded-md">이메일 보내기</Button>
+                    </div>
+
+                    {/* Forgot / Register */}
+                    <div className="flex justify-between mb-4">
+                        <Link href="/login">
+                            <a className="underline text-xs text-gray-500 hover:text-gray-900">
+                                로그인 페이지로 가기
+                            </a>
+                        </Link>
                     </div>
                 </form>
             </AuthCard>
